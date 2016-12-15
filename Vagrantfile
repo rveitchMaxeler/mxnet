@@ -13,6 +13,8 @@ Vagrant.configure(2) do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "npalm/mint17-amd64-cinnamon"
+  config.vm.provision "shell", path:"vagrantProvision.sh"
+  config.vm.provision "shell", path:"vagrantProvisionMXNET.sh", privileged: false
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
